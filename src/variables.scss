@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+
+$red: #fc4747;
+$darkblue: #10141e;
+$semidarkblue: #161d2f;
+$grayblue: #5a698f;
+$white: #ffffff;
+
+// font weights
+$light: 300;
+$medium: 500;
+
+// font sizes
+$large-heading: 3.2rem;
+$medium-heading: 2.4rem;
+$xs-heading: 1.8rem;
+$medium-body: 1.5rem;
+$small-body: 1.3rem;
+
+%small-heading {
+  font-size: $medium-heading;
+  font-weight: $medium;
+}
