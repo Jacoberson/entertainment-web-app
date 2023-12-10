@@ -1,0 +1,41 @@
+@use "../../variables.scss";
+.search-section {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  input {
+    background-color: variables.$darkblue;
+    font-size: 1rem;
+    font-weight: variables.$medium;
+    color: variables.$white;
+    outline: none;
+    border: none;
+    padding: 0.9375rem 0;
+    caret-color: variables.$red;
+
+    &:focus {
+      border-bottom: 1px solid variables.$grayblue;
+    }
+  }
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

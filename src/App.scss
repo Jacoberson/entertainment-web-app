@@ -1,8 +1,14 @@
 @use "./variables.scss";
-@use "../src/components/navbar.scss";
+@use "../src/components/Navbar/navbar.scss";
+@use "../src/components/SearchInput/searchinput.scss";
 
 body {
   font-family: "Outfit", sans-serif;
   background-color: variables.$darkblue;
   margin: 0;
+  overflow: hidden;
+}
+
+main {
+  margin: auto 18px;
 }

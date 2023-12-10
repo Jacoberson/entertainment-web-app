@@ -1,9 +1,9 @@
-import Logo from "../assets/logo.svg";
-import BookmarkIcon from "../assets/icon-nav-bookmark.svg";
-import HomeIcon from "../assets/icon-nav-home.svg";
-import MoviesIcon from "../assets/icon-nav-movies.svg";
-import TvIcon from "../assets/icon-nav-tv-series.svg";
-import Avatar from "../assets/image-avatar.png";
+import Logo from "../../assets/logo.svg";
+import BookmarkIcon from "../../assets/icon-nav-bookmark.svg";
+import HomeIcon from "../../assets/icon-nav-home.svg";
+import MoviesIcon from "../../assets/icon-nav-movies.svg";
+import TvIcon from "../../assets/icon-nav-tv-series.svg";
+import Avatar from "../../assets/image-avatar.png";
 
 export default function Navbar() {
   return (
