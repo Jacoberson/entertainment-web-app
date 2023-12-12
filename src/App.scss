@@ -1,6 +1,7 @@
 @use "./variables.scss";
 @use "../src/components/Navbar/navbar.scss";
 @use "../src/components/SearchInput/searchinput.scss";
+@use "../src/components/TrendingSection/trending-section.scss";
 
 body {
   font-family: "Outfit", sans-serif;
