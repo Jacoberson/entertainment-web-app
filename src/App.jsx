@@ -5,6 +5,7 @@ import TrendingSection from "./components/TrendingSection/TrendingSection";
 import RecommendedSection from "./components/RecommendedSection/RecommendedSection";
 import MoviesTab from "./components/MoviesTab/MoviesTab";
 import "./App.scss";
+import TVTab from "./components/TVTab/TVTab";
 
 function App() {
   const [selectedNavItem, setSelectedNavItem] = useState("home");
@@ -24,6 +25,7 @@ function App() {
           </>
         )}
         {selectedNavItem === "movies" && <MoviesTab />}
+        {selectedNavItem === "tv" && <TVTab />}
       </main>
     </>
   );
