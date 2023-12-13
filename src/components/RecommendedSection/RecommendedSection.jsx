@@ -3,18 +3,18 @@ import BookmarkIcon from "/assets/icon-bookmark-empty.svg";
 
 export default function TrendingSection() {
   return (
-    <section className="trending-section">
-      <h2>Trending</h2>
+    <section className="recommended-section">
+      <h2>Recommended for you</h2>
       <ul>
         {data
-          .filter(val => val.isTrending === true)
+          .filter(val => val.isTrending !== true)
           .map(item => {
             return (
-              <div key={item.title} className="trending-item">
+              <div key={item.title} className="recommended-item">
                 <li>
                   <img className="bookmark" src={BookmarkIcon} alt="" />
                   <img
-                    src={item.thumbnail.trending.small}
+                    src={item.thumbnail.regular.small}
                     alt={`thumbnail for ${item.title}`}
                   />
                 </li>

@@ -2,12 +2,33 @@
 @use "../src/components/Navbar/navbar.scss";
 @use "../src/components/SearchInput/searchinput.scss";
 @use "../src/components/TrendingSection/trending-section.scss";
+@use "../src/components/RecommendedSection/recommended-section.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
 
 body {
   font-family: "Outfit", sans-serif;
   background-color: variables.$darkblue;
   margin: 0;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 main {
