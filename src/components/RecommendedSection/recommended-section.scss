@@ -1,18 +1,7 @@
 @use "../../variables.scss";
 
 .recommended-section {
-  color: variables.$white;
   overflow-x: hidden;
-
-  h2 {
-    font-size: variables.$xs-heading;
-    font-weight: variables.$light;
-    margin-bottom: 1.5rem;
-  }
-
-  li {
-    list-style-type: none;
-  }
 
   ul {
     padding: 0;

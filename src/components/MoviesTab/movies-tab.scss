@@ -1,15 +1,16 @@
 @use "../../variables.scss";
 
-.trending-section {
-  overflow: scroll;
+.movie-list {
   margin: 1.5rem 0;
 
   ul {
-    display: flex;
-    gap: 1rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
   }
 
-  .trending-item {
+  .movie {
     position: relative;
 
     .bookmark {
@@ -23,16 +24,18 @@
 
     img {
       border-radius: 5px;
-      min-width: 240px;
-      min-height: 140px;
+      min-width: 164px;
+      min-height: 110px;
     }
 
     h4 {
       font-weight: variables.$medium;
+      font-size: variables.$sm-med-body;
     }
 
     p {
       font-weight: variables.$light;
+      font-size: variables.$smallest;
 
       span {
         margin-right: 8px;
@@ -44,13 +47,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
 
       .info-container {
         p {
           display: flex;
+          margin-top: 0.5rem;
         }
 
         .movie {
@@ -62,21 +63,7 @@
             height: 12px;
             float: left;
             position: relative;
-            top: 5px;
-            margin-right: 6px;
-          }
-        }
-
-        .tv-series {
-          &:before {
-            content: "";
-            display: block;
-            background: url("/assets/icon-category-tv.svg") no-repeat;
-            width: 12px;
-            height: 12px;
-            float: left;
-            position: relative;
-            top: 4px;
+            top: 1px;
             margin-right: 6px;
           }
         }

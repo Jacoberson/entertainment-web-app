@@ -1,16 +1,16 @@
 import data from "../../data.json";
 import BookmarkIcon from "/assets/icon-bookmark-empty.svg";
 
-export default function TrendingSection() {
+export default function MoviesTab() {
   return (
-    <section className="trending-section">
-      <h2>Trending</h2>
+    <section className="movie-list">
+      <h2>Movies</h2>
       <ul>
         {data
-          .filter(val => val.isTrending === true)
+          .filter(val => val.category === "Movie")
           .map(item => {
             return (
-              <div key={item.title} className="trending-item">
+              <div key={item.title} className="movie">
                 <li>
                   <img
                     className="bookmark"
@@ -18,7 +18,7 @@ export default function TrendingSection() {
                     alt="bookmark icon"
                   />
                   <img
-                    src={item.thumbnail.trending.small}
+                    src={item.thumbnail.regular.small}
                     alt={`thumbnail for ${item.title}`}
                   />
                 </li>
@@ -27,12 +27,7 @@ export default function TrendingSection() {
                     <p>
                       <span>{item.year}</span>
                       <span>&bull;</span>
-                      <span
-                        className={`category ${item.category
-                          .toLowerCase()
-                          .replace(" ", "-")}`}>
-                        {item.category}
-                      </span>
+                      <span className="category movie">{item.category}</span>
                       <span>&bull;</span>
                       <span>{item.rating}</span>
                     </p>

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SearchInput from "./components/SearchInput/SearchInput";
 import TrendingSection from "./components/TrendingSection/TrendingSection";
 import RecommendedSection from "./components/RecommendedSection/RecommendedSection";
+import MoviesTab from "./components/MoviesTab/MoviesTab";
 import "./App.scss";
 
 function App() {
@@ -16,8 +17,13 @@ function App() {
       />
       <main>
         <SearchInput />
-        <TrendingSection />
-        <RecommendedSection />
+        {selectedNavItem === "home" && (
+          <>
+            <TrendingSection />
+            <RecommendedSection />
+          </>
+        )}
+        {selectedNavItem === "movies" && <MoviesTab />}
       </main>
     </>
   );

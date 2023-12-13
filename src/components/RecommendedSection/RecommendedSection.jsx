@@ -12,7 +12,11 @@ export default function TrendingSection() {
             return (
               <div key={item.title} className="recommended-item">
                 <li>
-                  <img className="bookmark" src={BookmarkIcon} alt="" />
+                  <img
+                    className="bookmark"
+                    src={BookmarkIcon}
+                    alt="bookmark icon"
+                  />
                   <img
                     src={item.thumbnail.regular.small}
                     alt={`thumbnail for ${item.title}`}
