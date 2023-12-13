@@ -1,7 +1,7 @@
 import data from "../../data.json";
-import BookmarkIcon from "../../assets/icon-bookmark-empty.svg";
-import MovieIcon from "../../assets/icon-category-movie.svg";
-import TVIcon from "../../assets/icon-category-tv.svg";
+import BookmarkIcon from "/assets/icon-bookmark-empty.svg";
+import MovieIcon from "/assets/icon-category-movie.svg";
+import TVIcon from "/assets/icon-category-tv.svg";
 
 export default function TrendingSection() {
   return (

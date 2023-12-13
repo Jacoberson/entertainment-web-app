@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SearchIcon from "../../assets/icon-search.svg";
+import SearchIcon from "/assets/icon-search.svg";
 
 export default function SearchInput() {
   useEffect(() => {
