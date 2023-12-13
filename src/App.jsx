@@ -17,15 +17,25 @@ function App() {
         setSelectedNavItem={setSelectedNavItem}
       />
       <main>
-        <SearchInput />
         {selectedNavItem === "home" && (
           <>
+            <SearchInput placeholder="Search for movies or TV series" />
             <TrendingSection />
             <RecommendedSection />
           </>
         )}
-        {selectedNavItem === "movies" && <MoviesTab />}
-        {selectedNavItem === "tv" && <TVTab />}
+        {selectedNavItem === "movies" && (
+          <>
+            <SearchInput placeholder="Search for movies" />
+            <MoviesTab />
+          </>
+        )}
+        {selectedNavItem === "tv" && (
+          <>
+            <SearchInput placeholder="Search for TV series" />
+            <TVTab />
+          </>
+        )}
       </main>
     </>
   );

@@ -1,18 +1,15 @@
-import { useEffect } from "react";
 import SearchIcon from "/assets/icon-search.svg";
+import PropTypes from "prop-types";
 
-export default function SearchInput() {
-  useEffect(() => {
-    const searchInput = document.querySelector(".search-section > input");
-    searchInput.setAttribute(
-      "size",
-      searchInput.getAttribute("placeholder").length
-    );
-  }, []);
+SearchInput.propTypes = {
+  placeholder: PropTypes.string,
+};
+
+export default function SearchInput({ placeholder }) {
   return (
     <div className="search-section">
       <img src={SearchIcon} alt="" />
-      <input type="search" placeholder="Search for movies or TV series" />
+      <input type="search" placeholder={placeholder} size="30" />
     </div>
   );
 }
