@@ -1,5 +1,6 @@
 import data from "../../data.json";
-import BookmarkIcon from "/assets/icon-bookmark-empty.svg";
+import EmptyBookmarkIcon from "/assets/icon-bookmark-empty.svg";
+import BookmarkIcon from "/assets/icon-bookmark-full.svg";
 
 export default function TrendingSection() {
   return (
@@ -14,7 +15,7 @@ export default function TrendingSection() {
                 <li>
                   <img
                     className="bookmark"
-                    src={BookmarkIcon}
+                    src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}
                     alt="bookmark icon"
                   />
                   <img
@@ -30,7 +31,8 @@ export default function TrendingSection() {
                       <span
                         className={`category ${item.category
                           .toLowerCase()
-                          .replace(" ", "-")}`}>
+                          .replace(" ", "-")}`}
+                      >
                         {item.category}
                       </span>
                       <span>&bull;</span>
