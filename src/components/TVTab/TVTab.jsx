@@ -1,6 +1,6 @@
 import data from "../../data.json";
 import EmptyBookmarkIcon from "/assets/icon-bookmark-empty.svg";
-import BookmarkIcon from "/assets/icon-bookmark-full.svg"
+import BookmarkIcon from "/assets/icon-bookmark-full.svg";
 
 export default function TVTab() {
   return (
@@ -15,7 +15,7 @@ export default function TVTab() {
                 <li>
                   <img
                     className="bookmark"
-                    src={BookmarkIcon}
+                    src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}
                     alt="bookmark icon"
                   />
                   <img

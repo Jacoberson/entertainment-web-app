@@ -4,6 +4,7 @@ import SearchInput from "./components/SearchInput/SearchInput";
 import TrendingSection from "./components/TrendingSection/TrendingSection";
 import RecommendedSection from "./components/RecommendedSection/RecommendedSection";
 import MoviesTab from "./components/MoviesTab/MoviesTab";
+import BookmarkTab from "./components/BookmarkTab/BookmarkTab";
 import "./App.scss";
 import TVTab from "./components/TVTab/TVTab";
 
@@ -34,6 +35,12 @@ function App() {
           <>
             <SearchInput placeholder="Search for TV series" />
             <TVTab />
+          </>
+        )}
+        {selectedNavItem === "bookmarks" && (
+          <>
+            <SearchInput placeholder="Search for bookmarked shows or movies" />
+            <BookmarkTab />
           </>
         )}
       </main>
