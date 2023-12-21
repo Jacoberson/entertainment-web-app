@@ -47,7 +47,7 @@ function App() {
         )}
         {selectedNavItem === "bookmarks" && (
           <>
-            <SearchInput placeholder="Search for bookmarked shows or movies" />
+            <SearchInput placeholder="Search for bookmarked shows" />
             <BookmarkTab
               mediaItems={mediaItems}
               setMediaItems={setMediaItems}
