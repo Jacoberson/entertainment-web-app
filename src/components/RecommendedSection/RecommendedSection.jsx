@@ -1,13 +1,30 @@
-import data from "../../data.json";
 import EmptyBookmarkIcon from "/assets/icon-bookmark-empty.svg";
 import BookmarkIcon from "/assets/icon-bookmark-full.svg";
+import PropTypes from "prop-types";
 
-export default function TrendingSection() {
+RecommendedSection.propTypes = {
+  mediaItems: PropTypes.array,
+  setMediaItems: PropTypes.func,
+};
+
+export default function RecommendedSection({ mediaItems, setMediaItems }) {
+  const handleBookmarking = (item, isBookmarked) => {
+    const newMediaItems = mediaItems.map(newItem => {
+      if (newItem === item) {
+        return { ...newItem, isBookmarked: !isBookmarked };
+      } else {
+        return newItem;
+      }
+    });
+    setMediaItems(newMediaItems);
+    item.isBookmarked = !item.isBookmarked;
+  };
+
   return (
     <section className="recommended-section">
       <h2>Recommended for you</h2>
       <ul>
-        {data
+        {mediaItems
           .filter(val => val.isTrending !== true)
           .map(item => {
             return (
@@ -17,6 +34,7 @@ export default function TrendingSection() {
                     className="bookmark"
                     src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}
                     alt="bookmark icon"
+                    onClick={() => handleBookmarking(item, item.isBookmarked)}
                   />
                   <img
                     src={item.thumbnail.regular.small}

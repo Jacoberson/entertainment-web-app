@@ -1,13 +1,30 @@
-import data from "../../data.json";
 import BookmarkIcon from "/assets/icon-bookmark-full.svg";
+import PropTypes from "prop-types";
 
-export default function BookmarkTab() {
+BookmarkTab.propTypes = {
+  mediaItems: PropTypes.array,
+  setMediaItems: PropTypes.func,
+};
+
+export default function BookmarkTab({ mediaItems, setMediaItems }) {
+  const handleBookmarking = (item, isBookmarked) => {
+    const newMediaItems = mediaItems.map(newItem => {
+      if (newItem === item) {
+        return { ...newItem, isBookmarked: !isBookmarked };
+      } else {
+        return newItem;
+      }
+    });
+    setMediaItems(newMediaItems);
+    item.isBookmarked = !item.isBookmarked;
+  };
+
   return (
     <section className="bookmark-list">
       <div className="bookmarked-movies">
         <h2>Bookmarked Movies</h2>
         <ul>
-          {data
+          {mediaItems
             .filter(val => val.category === "Movie" && val.isBookmarked)
             .map(item => {
               return (
@@ -17,6 +34,7 @@ export default function BookmarkTab() {
                       className="bookmark"
                       src={BookmarkIcon}
                       alt="bookmark icon"
+                      onClick={() => handleBookmarking(item, item.isBookmarked)}
                     />
                     <img
                       src={item.thumbnail.regular.small}
@@ -45,7 +63,7 @@ export default function BookmarkTab() {
       <div className="bookmarked-tv-series">
         <h2>Bookmarked TV Series</h2>
         <ul>
-          {data
+          {mediaItems
             .filter(val => val.category === "TV Series" && val.isBookmarked)
             .map(item => {
               return (
@@ -55,6 +73,7 @@ export default function BookmarkTab() {
                       className="bookmark"
                       src={BookmarkIcon}
                       alt="bookmark icon"
+                      onClick={() => handleBookmarking(item, item.isBookmarked)}
                     />
                     <img
                       src={item.thumbnail.regular.small}
