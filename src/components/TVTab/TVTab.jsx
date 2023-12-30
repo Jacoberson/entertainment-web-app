@@ -1,3 +1,5 @@
+import { useState } from "react";
+import SearchInput from "../SearchInput/SearchInput";
 import EmptyBookmarkIcon from "/assets/icon-bookmark-empty.svg";
 import BookmarkIcon from "/assets/icon-bookmark-full.svg";
 import PropTypes from "prop-types";
@@ -8,6 +10,14 @@ TVTab.propTypes = {
 };
 
 export default function TVTab({ mediaItems, setMediaItems }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const shows = mediaItems.filter(item => item.category === "TV Series");
+
+  const filteredSeries = shows.filter(show => {
+    if (searchTerm === "") return show;
+    else return show.title.toLowerCase().includes(searchTerm);
+  });
+
   const handleBookmarking = (item, isBookmarked) => {
     const newMediaItems = mediaItems.map(newItem => {
       if (newItem === item) {
@@ -21,12 +31,24 @@ export default function TVTab({ mediaItems, setMediaItems }) {
   };
 
   return (
-    <section className="series-list">
-      <h2>TV Series</h2>
-      <ul>
-        {mediaItems
-          .filter(val => val.category === "TV Series")
-          .map(item => {
+    <>
+      <SearchInput
+        placeholder="Search for TV series"
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <section className="series-list">
+        {searchTerm === "" ? (
+          <h2>TV Series</h2>
+        ) : (
+          <h2>
+            {`Found ${filteredSeries.length} ${
+              filteredSeries.length === 1 ? "result" : "results"
+            } for '${searchTerm}'`}
+          </h2>
+        )}
+        <ul>
+          {filteredSeries.map(item => {
             return (
               <div key={item.title} className="series">
                 <li>
@@ -60,7 +82,8 @@ export default function TVTab({ mediaItems, setMediaItems }) {
               </div>
             );
           })}
-      </ul>
-    </section>
+        </ul>
+      </section>
+    </>
   );
 }

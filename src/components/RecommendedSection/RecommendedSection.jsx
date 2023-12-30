@@ -5,9 +5,16 @@ import PropTypes from "prop-types";
 RecommendedSection.propTypes = {
   mediaItems: PropTypes.array,
   setMediaItems: PropTypes.func,
+  filteredData: PropTypes.array,
+  searchTerm: PropTypes.string,
 };
 
-export default function RecommendedSection({ mediaItems, setMediaItems }) {
+export default function RecommendedSection({
+  mediaItems,
+  setMediaItems,
+  filteredData,
+  searchTerm,
+}) {
   const handleBookmarking = (item, isBookmarked) => {
     const newMediaItems = mediaItems.map(newItem => {
       if (newItem === item) {
@@ -21,12 +28,19 @@ export default function RecommendedSection({ mediaItems, setMediaItems }) {
   };
 
   return (
-    <section className="recommended-section">
-      <h2>Recommended for you</h2>
-      <ul>
-        {mediaItems
-          .filter(val => val.isTrending !== true)
-          .map(item => {
+    <>
+      <section className="recommended-section">
+        {searchTerm === "" ? (
+          <h2>Recommended for you</h2>
+        ) : (
+          <h2>
+            {`Found ${filteredData.length} ${
+              filteredData.length === 1 ? "result" : "results"
+            } for '${searchTerm}'`}
+          </h2>
+        )}
+        <ul>
+          {filteredData.map(item => {
             return (
               <div key={item.title} className="recommended-item">
                 <li>
@@ -64,7 +78,8 @@ export default function RecommendedSection({ mediaItems, setMediaItems }) {
               </div>
             );
           })}
-      </ul>
-    </section>
+        </ul>
+      </section>
+    </>
   );
 }
