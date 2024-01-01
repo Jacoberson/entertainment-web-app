@@ -61,10 +61,20 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
                             handleBookmarking(movie, movie.isBookmarked)
                           }
                         />
-                        <img
-                          src={movie.thumbnail.regular.small}
-                          alt={`thumbnail for ${movie.title}`}
-                        />
+                        <picture>
+                          <source
+                            media="(max-width: 767px)"
+                            srcSet={movie.thumbnail.regular.small}
+                          />
+                          <source
+                            media="(max-width: 1024px)"
+                            srcSet={movie.thumbnail.regular.medium}
+                          />
+                          <img
+                            src={movie.thumbnail.regular.large}
+                            alt={`thumbnail for ${movie.title}`}
+                          />
+                        </picture>
                       </li>
                       <div className="text">
                         <div className="info-container">
@@ -102,10 +112,20 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
                             handleBookmarking(series, series.isBookmarked)
                           }
                         />
-                        <img
-                          src={series.thumbnail.regular.small}
-                          alt={`thumbnail for ${series.title}`}
-                        />
+                        <picture>
+                          <source
+                            media="(max-width: 767px)"
+                            srcSet={series.thumbnail.regular.small}
+                          />
+                          <source
+                            media="(max-width: 1024px)"
+                            srcSet={series.thumbnail.regular.medium}
+                          />
+                          <img
+                            src={series.thumbnail.regular.large}
+                            alt={`thumbnail for ${series.title}`}
+                          />
+                        </picture>
                       </li>
                       <div className="text">
                         <div className="info-container">
@@ -149,10 +169,20 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
                           handleBookmarking(item, item.isBookmarked)
                         }
                       />
-                      <img
-                        src={item.thumbnail.regular.small}
-                        alt={`thumbnail for ${item.title}`}
-                      />
+                      <picture>
+                        <source
+                          media="(max-width: 767px)"
+                          srcSet={item.thumbnail.regular.small}
+                        />
+                        <source
+                          media="(max-width: 1024px)"
+                          srcSet={item.thumbnail.regular.medium}
+                        />
+                        <img
+                          src={item.thumbnail.regular.large}
+                          alt={`thumbnail for ${item.title}`}
+                        />
+                      </picture>
                     </li>
                     <div className="text">
                       <div className="info-container">

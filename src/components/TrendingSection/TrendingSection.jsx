@@ -36,10 +36,16 @@ export default function TrendingSection({ mediaItems, setMediaItems }) {
                     alt="bookmark icon"
                     onClick={() => handleBookmarking(item, item.isBookmarked)}
                   />
-                  <img
-                    src={item.thumbnail.trending.small}
-                    alt={`thumbnail for ${item.title}`}
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={item.thumbnail.trending.small}
+                    />
+                    <img
+                      src={item.thumbnail.trending.large}
+                      alt={`thumbnail for ${item.title}`}
+                    />
+                  </picture>
                 </li>
                 <div className="text">
                   <div className="info-container">

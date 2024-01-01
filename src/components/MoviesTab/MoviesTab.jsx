@@ -59,10 +59,20 @@ export default function MoviesTab({ mediaItems, setMediaItems }) {
                     alt="bookmark icon"
                     onClick={() => handleBookmarking(item, item.isBookmarked)}
                   />
-                  <img
-                    src={item.thumbnail.regular.small}
-                    alt={`thumbnail for ${item.title}`}
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcSet={item.thumbnail.regular.small}
+                    />
+                    <source
+                      media="(max-width: 1024px)"
+                      srcSet={item.thumbnail.regular.medium}
+                    />
+                    <img
+                      src={item.thumbnail.regular.large}
+                      alt={`thumbnail for ${item.title}`}
+                    />
+                  </picture>
                 </li>
                 <div className="text">
                   <div className="info-container">
