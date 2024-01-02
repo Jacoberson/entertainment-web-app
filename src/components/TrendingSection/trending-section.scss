@@ -1,8 +1,20 @@
 @use "../../variables.scss";
 
 .trending-section {
-  overflow: scroll;
+  overflow-x: scroll;
   margin-top: 1.5rem;
+
+  &::-webkit-scrollbar {
+    height: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: variables.$semidarkblue;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: variables.$grayblue;
+  }
 
   ul {
     display: flex;
@@ -25,6 +37,11 @@
       border-radius: 5px;
       min-width: 240px;
       min-height: 140px;
+
+      @media (min-width: variables.$tablet) {
+        min-width: 470px;
+        min-height: 230px;
+      }
     }
 
     h4 {
