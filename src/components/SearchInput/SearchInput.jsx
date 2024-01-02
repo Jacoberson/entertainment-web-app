@@ -23,7 +23,6 @@ export default function SearchInput({
       <input
         type="search"
         placeholder={placeholder}
-        size="30"
         onChange={handleChange}
         value={searchTerm}
       />

@@ -56,5 +56,9 @@ main {
 
   .bookmark {
     cursor: pointer;
+
+    &:hover {
+      filter: invert(100%);
+    }
   }
 }
