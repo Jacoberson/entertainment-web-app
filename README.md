@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X/hub?share=true)
 - [Live Site URL](https://entertainment-web-app-jacoberson.vercel.app/)
 
 ## My process
