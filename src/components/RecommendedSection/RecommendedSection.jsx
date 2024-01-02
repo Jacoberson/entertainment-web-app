@@ -5,15 +5,13 @@ import PropTypes from "prop-types";
 RecommendedSection.propTypes = {
   mediaItems: PropTypes.array,
   setMediaItems: PropTypes.func,
-  filteredData: PropTypes.array,
-  searchTerm: PropTypes.string,
+  recommendedItems: PropTypes.array,
 };
 
 export default function RecommendedSection({
   mediaItems,
   setMediaItems,
-  filteredData,
-  searchTerm,
+  recommendedItems,
 }) {
   const handleBookmarking = (item, isBookmarked) => {
     const newMediaItems = mediaItems.map(newItem => {
@@ -30,17 +28,9 @@ export default function RecommendedSection({
   return (
     <>
       <section className="recommended-section">
-        {searchTerm === "" ? (
-          <h2>Recommended for you</h2>
-        ) : (
-          <h2>
-            {`Found ${filteredData.length} ${
-              filteredData.length === 1 ? "result" : "results"
-            } for '${searchTerm}'`}
-          </h2>
-        )}
+        <h2>Recommended for you</h2>
         <ul>
-          {filteredData.map(item => {
+          {recommendedItems.map(item => {
             return (
               <div key={item.title} className="recommended-item">
                 <li>

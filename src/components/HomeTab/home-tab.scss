@@ -1,0 +1,126 @@
+@use "../../variables.scss";
+
+.search-results {
+  margin: 1.5rem 0;
+
+  ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+
+    @media (min-width: variables.$tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    @media (min-width: variables.$desktop) {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
+
+  .searched-item {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+
+      .play-button {
+        display: block;
+      }
+    }
+
+    .play-button {
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: variables.$xs-heading;
+      color: variables.$white;
+      border-radius: 24px;
+      width: 117px;
+      height: 48px;
+      background: url("/assets/icon-play.svg") no-repeat;
+      background-position: 9px;
+      padding-left: 24px;
+      background-color: rgba(0, 0, 0, 0.4);
+
+      &:hover {
+        filter: invert(100);
+      }
+    }
+
+    .bookmark {
+      position: absolute;
+      min-width: 32px;
+      min-height: 32px;
+      border-radius: 50%;
+      right: 8px;
+      top: 8px;
+    }
+
+    img {
+      border-radius: 5px;
+      min-width: 164px;
+      min-height: 110px;
+    }
+
+    h4 {
+      font-weight: variables.$medium;
+      font-size: variables.$sm-med-body;
+    }
+
+    p {
+      font-weight: variables.$light;
+      font-size: variables.$smallest;
+
+      span {
+        margin-right: 8px;
+        opacity: 0.8;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .info-container {
+        p {
+          display: flex;
+          margin-top: 0.5rem;
+        }
+
+        .movie {
+          &:before {
+            content: "";
+            display: block;
+            background: url("/assets/icon-category-movie.svg") no-repeat;
+            width: 12px;
+            height: 12px;
+            float: left;
+            position: relative;
+            top: 1px;
+            margin-right: 6px;
+          }
+        }
+
+        .tv-series {
+          &:before {
+            content: "";
+            display: block;
+            background: url("/assets/icon-category-tv.svg") no-repeat;
+            width: 12px;
+            height: 12px;
+            float: left;
+            position: relative;
+            top: 1px;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
