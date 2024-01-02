@@ -30,6 +30,7 @@ export default function TrendingSection({ mediaItems, setMediaItems }) {
             return (
               <div key={item.title} className="trending-item">
                 <li>
+                  <button className="play-button">Play</button>
                   <img
                     className="bookmark"
                     src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}

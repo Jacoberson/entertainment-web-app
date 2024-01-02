@@ -52,6 +52,7 @@ export default function TVTab({ mediaItems, setMediaItems }) {
             return (
               <div key={item.title} className="series">
                 <li>
+                  <button className="play-button">Play</button>
                   <img
                     className="bookmark"
                     src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}

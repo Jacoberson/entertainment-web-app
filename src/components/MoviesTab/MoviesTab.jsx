@@ -51,8 +51,9 @@ export default function MoviesTab({ mediaItems, setMediaItems }) {
         <ul>
           {filteredMovies.map(item => {
             return (
-              <div key={item.title} className="movie">
+              <div key={item.title} className="movie-item">
                 <li>
+                  <button className="play-button">Play</button>
                   <img
                     className="bookmark"
                     src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}
@@ -74,6 +75,7 @@ export default function MoviesTab({ mediaItems, setMediaItems }) {
                     />
                   </picture>
                 </li>
+
                 <div className="text">
                   <div className="info-container">
                     <p>

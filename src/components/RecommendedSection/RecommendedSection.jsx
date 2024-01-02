@@ -44,6 +44,7 @@ export default function RecommendedSection({
             return (
               <div key={item.title} className="recommended-item">
                 <li>
+                  <button className="play-button">Play</button>
                   <img
                     className="bookmark"
                     src={item.isBookmarked ? BookmarkIcon : EmptyBookmarkIcon}

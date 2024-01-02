@@ -51,8 +51,9 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
               <ul>
                 {bookmarkedMovies.map(movie => {
                   return (
-                    <div key={movie.title} className="movie">
+                    <div key={movie.title} className="movie-item">
                       <li>
+                        <button className="play-button">Play</button>
                         <img
                           className="bookmark"
                           src={BookmarkIcon}
@@ -104,6 +105,7 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
                   return (
                     <div key={series.title} className="tv-series">
                       <li>
+                        <button className="play-button">Play</button>
                         <img
                           className="bookmark"
                           src={BookmarkIcon}
@@ -161,6 +163,7 @@ export default function BookmarkTab({ mediaItems, setMediaItems }) {
                 return (
                   <div key={item.title} className="bookmarked-show">
                     <li>
+                      <button className="play-button">Play</button>
                       <img
                         className="bookmark"
                         src={BookmarkIcon}
